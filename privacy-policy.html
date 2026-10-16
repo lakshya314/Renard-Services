@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Renard Services Pvt. Ltd.</title>
+<meta name="description" content="Privacy Policy of Renard Services Pvt. Ltd. – trusted provider of Digital Signature Certificates, Trademark Registration and ISO Certification services since 2013.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   THEME — change colours here only
+   ========================================================= */
+:root{
+  --orange:#E8711A;
+  --orange-dark:#C95D0E;
+  --orange-soft:#FDF1E7;
+  --grey-900:#2B2725;
+  --grey-800:#3B3532;
+  --grey-700:#5A514C;
+  --grey-500:#8A817C;
+  --grey-200:#E7E3E0;
+  --grey-100:#F6F4F2;
+  --white:#FFFFFF;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(43,39,37,.08);
+  --shadow-lg:0 20px 50px rgba(43,39,37,.15);
+  --container:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--grey-700);background:var(--white);line-height:1.7;font-size:15.5px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.accent{font-family:'Playfair Display',serif;font-style:italic;color:var(--orange);font-weight:700}
+section{padding:96px 0}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:50px;font-weight:600;font-size:15px;transition:.3s;cursor:pointer;border:2px solid transparent;font-family:inherit}
+.btn-primary{background:var(--orange);color:var(--white)}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 10px 25px rgba(232,113,26,.35)}
+.btn-outline{border-color:rgba(255,255,255,.6);color:var(--white)}
+.btn-outline:hover{background:var(--white);color:var(--grey-900)}
+.btn svg{width:18px;height:18px}
+
+/* ---------- Section heading ---------- */
+.section-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.eyebrow::before,.eyebrow::after{content:"";width:28px;height:2px;background:var(--orange)}
+.section-head.left{text-align:left;margin-left:0}
+.section-head.left .eyebrow::after{display:none}
+h1,h2,h3,h4{color:var(--grey-900);line-height:1.25;font-weight:700}
+h2{font-size:clamp(28px,3.6vw,42px);margin-bottom:16px}
+.section-head p{color:var(--grey-500)}
+
+/* ---------- Top bar ---------- */
+.topbar{background:var(--grey-900);color:#CFC8C3;font-size:13px}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;height:42px;gap:20px}
+.topbar a{display:inline-flex;align-items:center;gap:7px;transition:.2s}
+.topbar a:hover{color:var(--orange)}
+.topbar svg{width:14px;height:14px;fill:var(--orange)}
+.topbar .left,.topbar .right{display:flex;gap:24px;align-items:center}
+
+/* ---------- Header / Nav ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 6px 25px rgba(0,0,0,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{display:flex;align-items:center}
+.logo-img{height:66px;width:auto;transition:transform .3s}
+.logo:hover .logo-img{transform:scale(1.04)}
+.footer-logo{display:inline-flex;background:#fff;padding:10px 18px;border-radius:12px}
+.footer-logo .logo-img{height:70px}
+.logo-text{line-height:1.1}
+.logo-text strong{display:block;font-size:20px;color:var(--grey-900);font-weight:800}
+.logo-text span{font-size:11px;letter-spacing:2.5px;color:var(--orange);font-weight:600;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{position:relative;padding:10px 16px;font-weight:500;color:var(--grey-800);font-size:15px;transition:.25s}
+.nav-links a::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:2px;background:var(--orange);transform:scaleX(0);transition:.3s;transform-origin:left}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{margin-left:14px}
+.nav-cta .btn{padding:12px 26px}
+.hamburger{display:none;width:44px;height:44px;border:none;background:var(--orange-soft);border-radius:10px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.hamburger span{width:22px;height:2px;background:var(--grey-900);transition:.3s;border-radius:2px}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- Hero slider ---------- */
+.hero{position:relative;background:var(--grey-900);color:var(--white);overflow:hidden;padding:0}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 85% 20%,rgba(232,113,26,.28),transparent 45%),
+  radial-gradient(circle at 10% 90%,rgba(232,113,26,.15),transparent 40%);}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px}
+.slides{position:relative;z-index:2;min-height:470px}
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s}
+.slide.active{opacity:1;visibility:visible;position:relative}
+.slide-text .tag{display:inline-block;background:rgba(232,113,26,.15);border:1px solid rgba(232,113,26,.4);color:#FFB27A;padding:7px 16px;border-radius:40px;font-size:13px;font-weight:500;margin-bottom:22px}
+.slide-text h1{color:var(--white);font-size:clamp(36px,5vw,60px);font-weight:800;margin-bottom:20px}
+.slide-text p{color:#CFC8C3;font-size:17px;max-width:520px;margin-bottom:34px}
+.slide-text .btns{display:flex;gap:14px;flex-wrap:wrap}
+.slide.active .slide-text>*{animation:fadeUp .8s both}
+.slide.active .slide-text>*:nth-child(2){animation-delay:.1s}
+.slide.active .slide-text>*:nth-child(3){animation-delay:.2s}
+.slide.active .slide-text>*:nth-child(4){animation-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.slide-visual{display:flex;justify-content:center}
+.visual-card{position:relative;width:min(400px,100%);aspect-ratio:1/1.05;background:linear-gradient(145deg,#4A433F,#2F2A28);border-radius:28px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:30px}
+.visual-card .big-icon{width:130px;height:130px;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(232,113,26,.18),0 0 0 28px rgba(232,113,26,.08)}
+.visual-card .big-icon svg{width:62px;height:62px;stroke:#fff;fill:none;stroke-width:1.8}
+.visual-card h3{color:#fff;font-size:22px;margin-top:20px}
+.visual-card small{color:#B9B0AA}
+.float-badge{position:absolute;background:#fff;color:var(--grey-900);padding:12px 18px;border-radius:14px;box-shadow:var(--shadow-lg);font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;animation:float 4s ease-in-out infinite}
+.float-badge i{width:34px;height:34px;border-radius:10px;background:var(--orange-soft);display:grid;place-items:center;font-style:normal;color:var(--orange);font-size:16px}
+.float-badge.b1{top:8%;left:-12%}
+.float-badge.b2{bottom:-4%;right:-10%;animation-delay:1.5s}
+@keyframes float{50%{transform:translateY(-12px)}}
+.slider-controls{position:absolute;z-index:5;bottom:78px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:18px}
+.arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;transition:.3s}
+.arrow:hover{background:var(--orange);border-color:var(--orange)}
+.arrow svg{width:18px;height:18px}
+.dots{display:flex;gap:8px}
+.dots button{width:10px;height:10px;border-radius:10px;border:none;background:rgba(255,255,255,.35);cursor:pointer;transition:.3s}
+.dots button.active{width:30px;background:var(--orange)}
+.hero .container{padding-top:70px;padding-bottom:150px}
+
+/* ---------- Trust strip ---------- */
+.trust{padding:0;margin-top:-50px;position:relative;z-index:10}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden}
+.trust-item{display:flex;align-items:center;gap:14px;padding:26px 24px;border-right:1px solid var(--grey-200)}
+.trust-item:last-child{border-right:none}
+.trust-item .ic{flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--orange-soft);display:grid;place-items:center}
+.trust-item .ic svg{width:24px;height:24px;stroke:var(--orange);fill:none;stroke-width:2}
+.trust-item h4{font-size:15px;margin-bottom:2px}
+.trust-item p{font-size:13px;color:var(--grey-500);line-height:1.4}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-media{position:relative}
+.about-media .img-main{display:block;position:relative;border-radius:16px;overflow:hidden;background:#fff;padding:10px;box-shadow:var(--shadow-lg);border:1px solid var(--grey-200);transition:transform .35s,box-shadow .35s}
+.about-media .img-main img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;border-radius:10px;display:block}
+.about-media .img-main:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(43,39,37,.22)}
+.about-media .img-main .zoom{position:absolute;top:22px;right:22px;background:rgba(43,39,37,.85);color:#fff;font-size:12.5px;font-weight:500;padding:7px 14px;border-radius:30px;opacity:0;transition:.3s}
+.about-media .img-main:hover .zoom{opacity:1}
+.about-media .exp{display:flex;align-items:center;gap:18px;margin-top:22px;background:var(--grey-900);color:#fff;padding:16px 22px;border-radius:14px;box-shadow:var(--shadow)}
+.about-media .exp strong{font-size:38px;line-height:1;font-weight:800;color:var(--orange);flex-shrink:0}
+.about-media .exp span{font-size:13.5px;line-height:1.45;color:#D9D2CD;border-left:1px solid #4A433F;padding-left:18px}
+.about-media .exp b{color:#fff;font-weight:600}
+.about-media::before{content:"";position:absolute;top:-22px;left:-22px;width:130px;height:130px;background-image:radial-gradient(var(--orange) 2px,transparent 2px);background-size:16px 16px;opacity:.5;z-index:-1}
+.about-text p{margin-bottom:18px}
+.check-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin:26px 0 34px}
+.check-list li{display:flex;gap:10px;align-items:center;font-weight:500;color:var(--grey-800);font-size:14.5px}
+.check-list li::before{content:"✓";flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;font-size:12px;display:grid;place-items:center}
+
+/* ---------- Services ---------- */
+.services{background:var(--grey-100)}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.service-card{background:#fff;border-radius:var(--radius);padding:38px 28px;box-shadow:var(--shadow);transition:.35s;position:relative;overflow:hidden;border-bottom:3px solid transparent}
+.service-card::before{content:"";position:absolute;top:0;right:0;width:110px;height:110px;background:var(--orange-soft);border-radius:0 0 0 100%;transition:.4s}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-bottom-color:var(--orange)}
+.service-card:hover::before{width:100%;height:100%;border-radius:0;opacity:.5}
+.service-card>*{position:relative}
+.service-card .s-icon{width:66px;height:66px;border-radius:16px;background:var(--grey-900);display:grid;place-items:center;margin-bottom:24px;transition:.35s}
+.service-card:hover .s-icon{background:var(--orange)}
+.service-card .s-icon svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:1.8}
+.service-card h3{font-size:20px;margin-bottom:12px}
+.service-card p{font-size:14.5px;color:var(--grey-500);margin-bottom:20px}
+.link-more{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--orange);font-size:14.5px}
+.link-more svg{width:16px;height:16px;transition:.3s}
+.link-more:hover svg{transform:translateX(5px)}
+
+/* ---------- Why choose / Process ---------- */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;counter-reset:step}
+.step{text-align:center;position:relative;padding:10px}
+.step:not(:last-child)::after{content:"";position:absolute;top:44px;left:calc(50% + 50px);width:calc(100% - 100px);border-top:2px dashed var(--grey-200)}
+.step .num{width:88px;height:88px;margin:0 auto 22px;border-radius:50%;background:#fff;border:2px solid var(--orange);display:grid;place-items:center;font-size:28px;font-weight:800;color:var(--orange);box-shadow:0 0 0 8px var(--orange-soft);transition:.3s}
+.step:hover .num{background:var(--orange);color:#fff}
+.step h4{font-size:18px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--grey-500)}
+
+/* ---------- Award ---------- */
+.award{background:var(--grey-900);color:#CFC8C3;position:relative;overflow:hidden}
+.award::before{content:"";position:absolute;right:-150px;top:-150px;width:450px;height:450px;border-radius:50%;background:rgba(232,113,26,.12)}
+.award-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative}
+.award h2{color:#fff}
+.award .eyebrow{color:#FFB27A}
+.award .eyebrow::before{background:#FFB27A}
+.award p{margin-bottom:28px}
+.certificate{background:#fff;border-radius:16px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,.35);transform:rotate(-2deg);transition:.4s}
+.certificate:hover{transform:rotate(0) scale(1.02)}
+.certificate-inner{border:2px solid var(--grey-200);border-radius:10px;padding:40px 30px;text-align:center;background:linear-gradient(180deg,#fff,#FBF9F7)}
+.certificate-inner .script{font-family:'Playfair Display',serif;font-style:italic;font-size:30px;color:var(--grey-900)}
+.certificate-inner .si{font-size:13px;color:var(--grey-500);margin:8px 0 18px}
+.certificate-inner .esign{font-size:46px;font-weight:800;color:var(--grey-900);letter-spacing:1px;line-height:1}
+.certificate-inner .yr{font-size:12px;letter-spacing:2px;color:var(--grey-500);margin-top:6px}
+.certificate-inner .medal{width:70px;height:70px;margin:22px auto 0;border-radius:50%;background:var(--orange);display:grid;place-items:center;color:#fff;font-size:28px;box-shadow:0 0 0 6px var(--orange-soft)}
+
+/* ---------- Cities ---------- */
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.city{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:pointer;box-shadow:var(--shadow)}
+.city .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s}
+.city:hover .bg{transform:scale(1.08)}
+.city::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(43,39,37,.88));transition:.4s}
+.city:hover::after{background:linear-gradient(180deg,rgba(232,113,26,.15) 0%,rgba(43,39,37,.9))}
+.city .info{position:absolute;left:24px;bottom:22px;z-index:2;color:#fff}
+.city .info h3{color:#fff;font-size:24px}
+.city .info span{font-size:13px;color:#FFB27A;display:flex;align-items:center;gap:6px}
+.city .pin{position:absolute;top:18px;right:18px;z-index:2;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:grid;place-items:center;transition:.3s}
+.city:hover .pin{background:var(--orange)}
+.city .pin svg{width:18px;height:18px;fill:#fff}
+/* city fallbacks (shown if images/xxx.jpg is missing) */
+.c-jaipur .bg{background-image:url('images/jaipur.jpg'),linear-gradient(135deg,#E8916A,#8C4A2F)}
+.c-delhi .bg{background-image:url('images/delhi.jpg'),linear-gradient(135deg,#9C7B6E,#4A3A34)}
+.c-gurgaon .bg{background-image:url('images/gurgaon.jpg'),linear-gradient(135deg,#6E7B85,#2E363C)}
+.c-noida .bg{background-image:url('images/noida.jpg'),linear-gradient(135deg,#5E8A94,#2B4248)}
+.c-pune .bg{background-image:url('images/pune.jpg'),linear-gradient(135deg,#6F8C5E,#33452B)}
+.c-indore .bg{background-image:url('images/indore.jpg'),linear-gradient(135deg,#8A5A5A,#3A2626)}
+
+/* ---------- Testimonials ---------- */
+.testimonials{background:var(--grey-100)}
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.testi{background:#fff;border-radius:var(--radius);padding:38px;box-shadow:var(--shadow);position:relative;transition:.3s}
+.testi:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.testi .quote{position:absolute;top:24px;right:30px;font-family:'Playfair Display',serif;font-size:90px;line-height:1;color:var(--orange-soft)}
+.stars{color:var(--orange);letter-spacing:3px;margin-bottom:14px}
+.testi p{font-style:italic;color:var(--grey-700);margin-bottom:26px;position:relative}
+.person{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--grey-200)}
+.avatar{width:54px;height:54px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px}
+.person h4{font-size:16px}
+.person span{font-size:13px;color:var(--grey-500)}
+
+/* ---------- Stats ---------- */
+.stats{background:linear-gradient(120deg,var(--orange),var(--orange-dark));padding:70px 0;color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.stat{text-align:center;position:relative}
+.stat:not(:last-child)::after{content:"";position:absolute;right:-15px;top:15%;height:70%;width:1px;background:rgba(255,255,255,.3)}
+.stat strong{display:block;font-size:48px;font-weight:800;line-height:1.1}
+.stat span{font-size:15px;opacity:.92}
+
+/* ---------- CTA band ---------- */
+.cta-band{padding:0;margin-top:-1px}
+
+/* ---------- Forms (careers + contact) ---------- */
+.forms-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.form-card{background:#fff;border-radius:20px;padding:44px;box-shadow:var(--shadow-lg);border-top:4px solid var(--orange)}
+.form-card.dark{background:var(--grey-900);border-top-color:var(--orange)}
+.form-card.dark h3,.form-card.dark .form-sub{color:#fff}
+.form-card.dark .form-sub{color:#B9B0AA}
+.form-card h3{font-size:26px;margin-bottom:6px}
+.form-sub{color:var(--grey-500);font-size:14px;margin-bottom:26px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field input,.field select,.field textarea{width:100%;padding:14px 18px;border:1px solid var(--grey-200);border-radius:10px;font-family:inherit;font-size:14.5px;color:var(--grey-900);background:var(--grey-100);transition:.25s;outline:none}
+.form-card.dark .field input,.form-card.dark .field select,.form-card.dark .field textarea{background:#3B3532;border-color:#4A433F;color:#fff}
+.field input::placeholder,.field textarea::placeholder{color:var(--grey-500)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--orange);background:#fff;box-shadow:0 0 0 4px rgba(232,113,26,.12)}
+.form-card.dark .field input:focus,.form-card.dark .field select:focus,.form-card.dark .field textarea:focus{background:#433C38}
+.field textarea{resize:vertical;min-height:120px}
+.form-msg{display:none;margin-top:14px;padding:12px 16px;border-radius:10px;background:#E8F6EC;color:#1E7B3A;font-size:14px}
+.form-msg.show{display:block}
+
+/* ---------- Footer ---------- */
+footer{background:var(--grey-900);color:#B9B0AA;padding-top:80px;font-size:14.5px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:44px;padding-bottom:56px}
+footer h4{color:#fff;font-size:18px;margin-bottom:22px;position:relative;padding-bottom:12px}
+footer h4::after{content:"";position:absolute;left:0;bottom:0;width:36px;height:2px;background:var(--orange)}
+footer .about p{margin:20px 0 22px}
+.f-links li{margin-bottom:11px}
+.f-links a{transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.f-links a::before{content:"›";color:var(--orange);font-size:18px}
+.f-links a:hover{color:var(--orange);padding-left:4px}
+.f-contact li{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
+.f-contact svg{width:18px;height:18px;fill:var(--orange);flex-shrink:0;margin-top:3px}
+.f-contact a:hover{color:var(--orange)}
+.socials{display:flex;gap:10px}
+.socials a{width:40px;height:40px;border-radius:10px;background:#3B3532;display:grid;place-items:center;transition:.3s}
+.socials a:hover{background:var(--orange);transform:translateY(-3px)}
+.socials svg{width:17px;height:17px;fill:#fff}
+.footer-bottom{border-top:1px solid #3B3532;padding:22px 0;font-size:13.5px}
+.footer-bottom .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-bottom a:hover{color:var(--orange)}
+
+/* ---------- Floating buttons ---------- */
+.to-top{position:fixed;right:24px;bottom:24px;width:48px;height:48px;border-radius:12px;background:var(--orange);color:#fff;border:none;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:.35s;z-index:90;box-shadow:0 10px 25px rgba(232,113,26,.4)}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top svg{width:20px;height:20px}
+.whatsapp{position:fixed;left:24px;bottom:24px;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;z-index:90;box-shadow:0 10px 25px rgba(37,211,102,.4);transition:.3s}
+.whatsapp:hover{transform:scale(1.08)}
+.whatsapp svg{width:30px;height:30px;fill:#fff}
+
+/* ---------- Scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:none}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1100px){
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .float-badge.b1{left:-4%}.float-badge.b2{right:-4%}
+}
+@media (max-width:960px){
+  section{padding:72px 0}
+  .topbar .left a:nth-child(2){display:none}
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:126px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:10px 20px 24px;box-shadow:0 20px 30px rgba(0,0,0,.1);transform:translateY(-130%);transition:transform .4s;z-index:-1;max-height:calc(100vh - 126px);overflow:auto}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:15px 4px;border-bottom:1px solid var(--grey-200)}
+  .nav-links a::after{display:none}
+  .nav-cta{margin:18px 0 0}
+  .nav-cta .btn{width:100%;justify-content:center}
+  .slide{grid-template-columns:1fr;text-align:center}
+  .slide-text p{margin-left:auto;margin-right:auto}
+  .slide-text .btns{justify-content:center}
+  .slide-visual{display:none}
+  .slides{min-height:430px}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-item:nth-child(2){border-right:none}
+  .trust-item:nth-child(-n+2){border-bottom:1px solid var(--grey-200)}
+  .about-grid,.award-grid,.forms-grid{grid-template-columns:1fr;gap:50px}
+  
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .step::after{display:none}
+  .city-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:40px 20px}
+  .stat:nth-child(2)::after{display:none}
+}
+@media (max-width:600px){
+  .topbar{display:none}
+  .nav-links{top:84px;max-height:calc(100vh - 84px)}
+  .nav{height:84px}
+  .logo-img{height:56px}
+  .service-grid,.process-grid,.city-grid,.trust-grid,.footer-grid{grid-template-columns:1fr}
+  .trust-item{border-right:none!important;border-bottom:1px solid var(--grey-200)}
+  .trust-item:last-child{border-bottom:none}
+  .check-list,.form-row{grid-template-columns:1fr}
+  .form-card{padding:30px 22px}
+  .stat::after{display:none}
+  .stat strong{font-size:38px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <a href="tel:+919982330838"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>+91 99823 30838</a>
+      <a href="mailto:info@renardservices.com"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>info@renardservices.com</a>
+    </div>
+    <div class="right">
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.5 5v5.3l4.5 2.7-.8 1.2-5.2-3.2V7h1.5z"/></svg>Mon – Sat: 10:00 AM – 7:00 PM</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="container nav">
+    <a href="index.html" class="logo" aria-label="Renard Services home">
+      <img src="images/logo.png" alt="Renard Services" class="logo-img">
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Our Services</a>
+      <a href="https://wa.me/919982330838" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      <div class="nav-cta"><a href="login.html" class="btn btn-primary">Client Login</a></div>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+/* =========================================================
+   PRIVACY POLICY PAGE
+   ========================================================= */
+.page-hero.sm{position:relative;overflow:hidden;background:linear-gradient(120deg,#FFFFFF 0%,#FFF7F0 50%,#FDEBDC 100%);padding:70px 0 80px}
+.page-hero.sm::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(232,113,26,.14) 1.3px,transparent 1.3px);background-size:28px 28px;-webkit-mask-image:radial-gradient(circle at 15% 40%,#000,transparent 55%);mask-image:radial-gradient(circle at 15% 40%,#000,transparent 55%)}
+.page-hero.sm::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;border:50px solid rgba(232,113,26,.07)}
+.page-hero.sm .container{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.crumbs{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(232,113,26,.2);padding:8px 18px;border-radius:40px;font-size:13.5px;font-weight:500;color:var(--grey-500);box-shadow:0 6px 18px rgba(232,113,26,.1);margin-bottom:22px}
+.crumbs a{color:var(--grey-800);display:inline-flex;align-items:center;gap:6px}
+.crumbs a:hover{color:var(--orange)}
+.crumbs svg{width:15px;height:15px;fill:var(--orange)}
+.crumbs b{color:var(--orange);font-weight:600}
+.page-hero.sm h1{font-size:clamp(38px,5vw,60px);font-weight:800;letter-spacing:-1.2px;line-height:1.1;margin-bottom:14px}
+.page-hero.sm p{font-size:17px;color:var(--grey-700);max-width:580px}
+.pp-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.pp-meta span{display:inline-flex;align-items:center;gap:8px;background:#fff;padding:9px 16px;border-radius:12px;font-size:13.5px;font-weight:600;color:var(--grey-900);box-shadow:0 8px 20px rgba(43,39,37,.06)}
+.pp-meta svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:2}
+.shield-art{flex-shrink:0;width:220px;height:220px;border-radius:50%;background:linear-gradient(140deg,#F5913F,var(--orange-dark));display:grid;place-items:center;box-shadow:0 30px 60px rgba(232,113,26,.35),0 0 0 18px rgba(232,113,26,.08)}
+.shield-art svg{width:100px;height:100px;stroke:#fff;fill:none;stroke-width:1.6}
+
+/* summary cards */
+.pp-summary{padding:0;margin-top:-34px;position:relative;z-index:2}
+.sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sum-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 16px 40px rgba(43,39,37,.09);display:flex;gap:16px;align-items:flex-start;border-top:3px solid var(--orange)}
+.sum-card .ic{flex-shrink:0;width:48px;height:48px;border-radius:14px;background:var(--orange-soft);display:grid;place-items:center}
+.sum-card .ic svg{width:24px;height:24px;stroke:var(--orange);fill:none;stroke-width:1.9}
+.sum-card h4{font-size:16px;margin-bottom:4px}
+.sum-card p{font-size:13.5px;color:var(--grey-500);line-height:1.55}
+
+/* layout */
+.pp-body{padding:70px 0 96px}
+.pp-layout{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:start}
+.toc{position:sticky;top:110px;background:#fff;border:1px solid var(--grey-200);border-radius:18px;padding:22px 18px;max-height:calc(100vh - 140px);overflow:auto}
+.toc h4{font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey-500);margin:0 6px 12px}
+.toc a{display:flex;gap:10px;padding:8px 10px;border-radius:10px;font-size:14px;color:var(--grey-700);transition:.2s;line-height:1.35}
+.toc a span{color:var(--grey-500);font-weight:600;font-size:12.5px;min-width:20px}
+.toc a:hover{background:var(--grey-100);color:var(--grey-900)}
+.toc a.on{background:var(--orange-soft);color:var(--orange-dark);font-weight:600}
+.toc a.on span{color:var(--orange)}
+.toc-print{margin-top:14px;padding-top:14px;border-top:1px dashed var(--grey-200)}
+.toc-print button{width:100%;justify-content:center;padding:11px 16px;font-size:14px}
+
+.pp-doc{background:#fff;border:1px solid var(--grey-200);border-radius:22px;padding:50px 54px;box-shadow:0 14px 40px rgba(43,39,37,.05)}
+.pp-doc section{padding:0;scroll-margin-top:110px}
+.pp-doc section+section{margin-top:44px;padding-top:44px;border-top:1px solid var(--grey-200)}
+.pp-doc h2{display:flex;align-items:center;gap:14px;font-size:24px;margin-bottom:16px}
+.pp-doc h2 .n{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:var(--orange);color:#fff;font-size:15px;font-weight:700;display:grid;place-items:center}
+.pp-doc h3{font-size:17px;margin:22px 0 10px;color:var(--grey-900)}
+.pp-doc p{margin-bottom:14px;color:var(--grey-700)}
+.pp-doc ul{margin:0 0 16px;display:grid;gap:9px}
+.pp-doc ul li{position:relative;padding-left:24px;color:var(--grey-700)}
+.pp-doc ul li::before{content:"";position:absolute;left:4px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px var(--orange-soft)}
+.pp-doc strong{color:var(--grey-900)}
+.pp-doc a{color:var(--orange-dark);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.note{display:flex;gap:14px;background:var(--orange-soft);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:14.5px;color:var(--grey-800)}
+.note svg{flex-shrink:0;width:22px;height:22px;stroke:var(--orange);fill:none;stroke-width:2;margin-top:2px}
+.dtable{width:100%;border-collapse:separate;border-spacing:0;margin:10px 0 18px;font-size:14.5px;border:1px solid var(--grey-200);border-radius:14px;overflow:hidden}
+.dtable th{background:var(--grey-900);color:#fff;text-align:left;padding:12px 16px;font-weight:600;font-size:13.5px}
+.dtable td{padding:12px 16px;border-top:1px solid var(--grey-200);vertical-align:top;color:var(--grey-700)}
+.dtable tr:nth-child(even) td{background:var(--grey-100)}
+.dtable td:first-child{font-weight:600;color:var(--grey-900);width:32%}
+.rights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 18px}
+.rights div{border:1px solid var(--grey-200);border-radius:14px;padding:16px 18px;transition:.25s}
+.rights div:hover{border-color:var(--orange);background:#FFFBF7}
+.rights b{display:block;color:var(--grey-900);margin-bottom:4px;font-size:15px}
+.rights span{font-size:14px;color:var(--grey-500)}
+.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+.contact-box div{display:flex;gap:14px;align-items:flex-start;background:var(--grey-100);border-radius:14px;padding:18px}
+.contact-box .ic{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:var(--orange);display:grid;place-items:center}
+.contact-box .ic svg{width:20px;height:20px;fill:#fff}
+.contact-box b{display:block;color:var(--grey-900);font-size:14.5px;margin-bottom:2px}
+.contact-box p{margin:0!important}
+.contact-box span,.contact-box a{font-size:14px;color:var(--grey-700);text-decoration:none;font-weight:400}
+
+@media (max-width:1000px){
+  .shield-art{display:none}
+  .sum-grid{grid-template-columns:1fr}
+  .pp-layout{grid-template-columns:1fr}
+  .toc{position:relative;top:0;max-height:none}
+  .toc-links{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+}
+@media (max-width:600px){
+  .pp-doc{padding:30px 20px;border-radius:18px}
+  .pp-doc h2{font-size:20px}
+  .toc-links{grid-template-columns:1fr}
+  .rights,.contact-box{grid-template-columns:1fr}
+  .dtable td:first-child{width:auto}
+  .dtable,.dtable tbody,.dtable tr,.dtable td{display:block;width:100%}
+  .dtable thead{display:none}
+  .dtable td{border-top:none}
+  .dtable tr{border-top:1px solid var(--grey-200)}
+  .dtable tr:first-child{border-top:none}
+}
+@media print{
+  .topbar,header,footer,.toc,.whatsapp,.to-top,.pp-summary,.shield-art{display:none!important}
+  .pp-layout{grid-template-columns:1fr}
+  .pp-doc{border:none;box-shadow:none;padding:0}
+  .page-hero.sm{padding:20px 0;background:none}
+}
+</style>
+
+<!-- ================= PAGE BANNER ================= -->
+<section class="page-hero sm">
+  <div class="container">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3z"/></svg>Home</a>
+        <span>/</span><b>Privacy Policy</b>
+      </nav>
+      <h1>Privacy <span class="accent">Policy</span></h1>
+      <p>How Renard Services Pvt. Ltd. collects, uses, shares and protects your personal information when you use our website and services.</p>
+      <div class="pp-meta">
+        <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Last updated: 16 October 2026</span>
+        <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 8 min read</span>
+      </div>
+    </div>
+    <div class="shield-art" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><rect x="9" y="10.5" width="6" height="5" rx="1"/><path d="M10.5 10.5V9a1.5 1.5 0 0 1 3 0v1.5"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUMMARY ================= -->
+<section class="pp-summary">
+  <div class="container sum-grid">
+    <div class="sum-card">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+      <div><h4>Only what's needed</h4><p>We collect the details and documents needed to deliver your DSC, trademark or ISO service.</p></div>
+    </div>
+    <div class="sum-card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div><h4>Never sold</h4><p>We do not sell or rent your personal data. We share it only to complete your service or when the law requires.</p></div>
+    </div>
+    <div class="sum-card">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+      <div><h4>You're in control</h4><p>You can ask to access, correct or delete your data, or withdraw consent, at any time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POLICY ================= -->
+<section class="pp-body">
+  <div class="container pp-layout">
+
+    <aside class="toc" aria-label="Contents">
+      <h4>On this page</h4>
+      <div class="toc-links">
+        <a href="#p1"><span>01</span>Who we are</a>
+        <a href="#p2"><span>02</span>Information we collect</a>
+        <a href="#p3"><span>03</span>How we use it</a>
+        <a href="#p4"><span>04</span>Consent</a>
+        <a href="#p5"><span>05</span>Who we share it with</a>
+        <a href="#p6"><span>06</span>Aadhaar &amp; KYC documents</a>
+        <a href="#p7"><span>07</span>How long we keep it</a>
+        <a href="#p8"><span>08</span>How we protect it</a>
+        <a href="#p9"><span>09</span>Cookies</a>
+        <a href="#p10"><span>10</span>Your rights</a>
+        <a href="#p11"><span>11</span>Children</a>
+        <a href="#p12"><span>12</span>Third-party links</a>
+        <a href="#p13"><span>13</span>Changes to this policy</a>
+        <a href="#p14"><span>14</span>Grievance Officer</a>
+      </div>
+      <div class="toc-print"><button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button></div>
+    </aside>
+
+    <article class="pp-doc">
+
+      <section id="p1">
+        <h2><span class="n">01</span>Who We Are</h2>
+        <p>This website, <strong>www.renardservices.com</strong>, is operated by <strong>Renard Services Private Limited</strong> ("Renard Services", "we", "us" or "our"), with its registered office at 205, Second Floor, Brij Anukampa, C-Scheme, Jaipur, Rajasthan, India.</p>
+        <p>We provide Digital Signature Certificates (DSC), trademark registration, ISO certification and related professional services. This Privacy Policy explains how we handle your personal information when you visit our website, contact us, or use our services.</p>
+        <p>We follow applicable Indian law, including the Information Technology Act, 2000, the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and the Digital Personal Data Protection Act, 2023, to the extent it is in force.</p>
+      </section>
+
+      <section id="p2">
+        <h2><span class="n">02</span>Information We Collect</h2>
+        <h3>Information you give us</h3>
+        <table class="dtable">
+          <thead><tr><th>Type</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>Contact details</td><td>Name, mobile number, email address, city and postal address.</td></tr>
+            <tr><td>Identity &amp; KYC documents</td><td>PAN, Aadhaar (or other proof of identity and address), photograph and, where required, video or mobile verification for DSC applications.</td></tr>
+            <tr><td>Business information</td><td>Company or firm name, GSTIN, IEC (for DGFT certificates), incorporation documents, authorisation letters, brand names, logos and details needed for trademark or ISO applications.</td></tr>
+            <tr><td>Payment details</td><td>Billing name, invoice details and transaction references. Card and bank details are processed by our payment partners; we do not store full card numbers.</td></tr>
+            <tr><td>Enquiries &amp; job applications</td><td>Anything you send through our contact, quote or careers forms, by email, phone or WhatsApp.</td></tr>
+          </tbody>
+        </table>
+        <h3>Information collected automatically</h3>
+        <ul>
+          <li>Device and browser information, IP address, and pages visited on our website.</li>
+          <li>Cookies and similar technologies, as explained in Section 09.</li>
+        </ul>
+      </section>
+
+      <section id="p3">
+        <h2><span class="n">03</span>How We Use Your Information</h2>
+        <ul>
+          <li>To process applications for Digital Signature Certificates, trademark registration, ISO certification and other services you request.</li>
+          <li>To verify your identity as required by Certifying Authorities and government authorities.</li>
+          <li>To respond to your enquiries, send quotes and provide customer support.</li>
+          <li>To send service updates such as application status, renewal reminders and invoices.</li>
+          <li>To send information about our services, but only where you have agreed. You can opt out at any time.</li>
+          <li>To review job applications submitted through our careers form.</li>
+          <li>To improve our website and services, and to keep them secure.</li>
+          <li>To comply with legal, tax, audit and regulatory obligations.</li>
+        </ul>
+      </section>
+
+      <section id="p4">
+        <h2><span class="n">04</span>Consent</h2>
+        <p>By submitting your information through our website or sharing documents with us for a service, you consent to us processing it for the purposes described in this policy. Where the law requires, we will ask for your specific consent, for example before identity verification or marketing communication.</p>
+        <p>You may withdraw your consent at any time by contacting us (see Section 14). Withdrawing consent will not affect processing already carried out. However, we may not be able to complete a service that depends on that information, such as issuing a DSC.</p>
+      </section>
+
+      <section id="p5">
+        <h2><span class="n">05</span>Who We Share It With</h2>
+        <p><strong>We do not sell, rent or trade your personal information.</strong> We share it only as needed to deliver your service, or when the law requires:</p>
+        <ul>
+          <li><strong>Licensed Certifying Authorities</strong> (licensed by the Controller of Certifying Authorities, India), which verify applicants and issue Digital Signature Certificates.</li>
+          <li><strong>Government authorities and portals</strong>, such as the Trademark Registry (IP India), MCA, GST, DGFT and income tax portals, when filing on your behalf.</li>
+          <li><strong>ISO certification bodies and auditors</strong> involved in your certification.</li>
+          <li><strong>Service providers</strong> who help us operate, such as hosting, email, payment and courier partners. They may use your data only to provide services to us.</li>
+          <li><strong>Legal and regulatory requirements:</strong> when required by law, court order or a government request, or to protect our rights and prevent fraud.</li>
+        </ul>
+      </section>
+
+      <section id="p6">
+        <h2><span class="n">06</span>Aadhaar &amp; KYC Documents</h2>
+        <p>Identity documents are sensitive, and we treat them that way.</p>
+        <ul>
+          <li>Aadhaar-based eKYC for DSCs is carried out through the Certifying Authority's authorised systems, in line with UIDAI and CCA guidelines.</li>
+          <li>We use KYC documents only for the application you have requested, and not for any other purpose.</li>
+          <li>Where possible, we ask for masked Aadhaar (showing only the last four digits).</li>
+          <li>Access to KYC documents within our team is limited to staff who need it to process your application.</li>
+        </ul>
+        <div class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Never share your DSC token PIN, OTPs or passwords with anyone, including our staff. Renard Services will never ask for them.</span></div>
+      </section>
+
+      <section id="p7">
+        <h2><span class="n">07</span>How Long We Keep It</h2>
+        <p>We keep personal information only as long as needed to provide the service, meet legal and regulatory requirements (including record-keeping rules that apply to Digital Signature Certificates and tax records), resolve disputes and enforce our agreements. When it is no longer needed, we securely delete or anonymise it.</p>
+      </section>
+
+      <section id="p8">
+        <h2><span class="n">08</span>How We Protect It</h2>
+        <p>We use reasonable security practices to protect your information from unauthorised access, loss, misuse or alteration. These include:</p>
+        <ul>
+          <li>Restricted, role-based access to customer documents.</li>
+          <li>Secure storage and encrypted transmission where possible.</li>
+          <li>Confidentiality obligations for our staff and service providers.</li>
+        </ul>
+        <p>No method of transmission or storage is completely secure. If a personal data breach occurs, we will take prompt steps to contain it and will notify affected users and authorities as required by law.</p>
+      </section>
+
+      <section id="p9">
+        <h2><span class="n">09</span>Cookies</h2>
+        <p>Our website may use cookies, which are small files stored on your device. They help the site work properly, remember your preferences and help us understand how visitors use the site. You can block or delete cookies in your browser settings. Some parts of the site may not work as intended without them.</p>
+      </section>
+
+      <section id="p10">
+        <h2><span class="n">10</span>Your Rights</h2>
+        <p>Subject to applicable law, you have the right to:</p>
+        <div class="rights">
+          <div><b>Access</b><span>Get a summary of the personal data we hold about you and how we use it.</span></div>
+          <div><b>Correction</b><span>Ask us to correct or update information that is inaccurate or incomplete.</span></div>
+          <div><b>Erasure</b><span>Ask us to delete your data when it is no longer required, unless the law requires us to keep it.</span></div>
+          <div><b>Withdraw consent</b><span>Withdraw consent you have given, including for marketing messages.</span></div>
+          <div><b>Grievance redressal</b><span>Raise a complaint with our Grievance Officer and get a response within a reasonable time.</span></div>
+          <div><b>Nominate</b><span>Nominate another person to exercise your rights in case of death or incapacity.</span></div>
+        </div>
+        <p>To exercise any of these rights, contact us using the details in Section 14. We may need to verify your identity before acting on your request.</p>
+      </section>
+
+      <section id="p11">
+        <h2><span class="n">11</span>Children</h2>
+        <p>Our services are meant for adults and businesses. We do not knowingly collect personal data from children under 18 without verifiable consent from a parent or lawful guardian. If you believe a child has shared information with us, please contact us and we will delete it.</p>
+      </section>
+
+      <section id="p12">
+        <h2><span class="n">12</span>Third-Party Links</h2>
+        <p>Our website may link to external websites, such as government portals, Certifying Authorities or social media. We are not responsible for their content or privacy practices. Please read their privacy policies before sharing information with them.</p>
+      </section>
+
+      <section id="p13">
+        <h2><span class="n">13</span>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our services or the law. The latest version will always be on this page, with the "Last updated" date at the top. Significant changes will be highlighted on our website.</p>
+      </section>
+
+      <section id="p14">
+        <h2><span class="n">14</span>Grievance Officer &amp; Contact</h2>
+        <p>If you have any questions, requests or complaints about this policy or how we handle your data, please contact our Grievance Officer:</p>
+        <div class="contact-box">
+          <div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span><p><b>Grievance Officer</b><span>Renard Services Pvt. Ltd.</span></p></div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span><p><b>Email</b><a href="mailto:info@renardservices.com">info@renardservices.com</a></p></div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span><p><b>Phone</b><a href="tel:+919982330838">+91 99823 30838</a><br><a href="tel:+911414006606">+91 141 4006606</a></p></div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg></span><p><b>Address</b><span>205, Second Floor, Brij Anukampa, C-Scheme, Jaipur, Rajasthan, India</span></p></div>
+        </div>
+        <p style="margin-top:18px">We aim to acknowledge complaints within 48 hours and resolve them within 30 days, or sooner where the law requires.</p>
+      </section>
+
+    </article>
+  </div>
+</section>
+
+<script>
+/* highlight the current section in the contents list */
+(function(){
+  const links=[...document.querySelectorAll('.toc a')];
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('on')); map.get(e.target.id)?.classList.add('on'); } });
+  },{rootMargin:'-120px 0px -65% 0px'});
+  document.querySelectorAll('.pp-doc section').forEach(s=>io.observe(s));
+})();
+</script>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container footer-grid">
+    <div class="about">
+      <a href="index.html" class="logo footer-logo">
+        <img src="images/logo.png" alt="Renard Services" class="logo-img">
+      </a>
+      <p>Delivering standards-based professional services — digital signatures, trademarks, ISO certification and company secretarial support — that are powerful, affordable and easy to use.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.2V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.2-9.4a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM16 2H8a6 6 0 0 0-6 6v8a6 6 0 0 0 6 6h8a6 6 0 0 0 6-6V8a6 6 0 0 0-6-6zm4 14a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4z"/></svg></a>
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.2l-7 8 8.2 10h-6.4l-5-6.3L5 21H1.8l7.5-8.6L1.5 3H8l4.5 5.8zm-1.1 16h1.8L7.4 4.9H5.5z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg></a>
+        <a href="https://wa.me/919982330838" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="f-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="https://wa.me/919982330838" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Our Services</h4>
+      <ul class="f-links">
+        <li><a href="services.html#dsc">Digital Signature</a></li>
+        <li><a href="services.html#trademark">Trademark Registration</a></li>
+        <li><a href="services.html#iso">ISO Certification</a></li>
+        <li><a href="index.html#careers">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Registered Office</h4>
+      <ul class="f-contact">
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg><span>205, Second Floor, Brij Anukampa, C-Scheme, Jaipur, Rajasthan, India</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span><a href="tel:+919982330838">+91 99823 30838</a><br><a href="tel:+911414006606">+91 141 4006606</a></span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@renardservices.com">info@renardservices.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© <span id="year"></span> Renard Services Pvt. Ltd. All Rights Reserved.</span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating buttons -->
+<a href="https://wa.me/919982330838" class="whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
+</a>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* ----- Mobile menu ----- */
+  const burger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open'); burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  /* ----- Active nav link by current page ----- */
+  const page = location.pathname.split('/').pop() || 'index.html';
+  navLinks.querySelectorAll('a:not(.btn)').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === page);
+  });
+
+  /* ----- Sticky header shadow + back-to-top ----- */
+  const header = document.getElementById('header');
+  const toTop = document.getElementById('toTop');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', scrollY > 10);
+    toTop.classList.toggle('show', scrollY > 500);
+  };
+  addEventListener('scroll', onScroll); onScroll();
+  toTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
+
+  /* ----- Hero slider (only on pages that have one) ----- */
+  if (document.getElementById('dots') && document.querySelector('.slide')) {
+    const slides = [...document.querySelectorAll('.slide')];
+    const dotsWrap = document.getElementById('dots');
+    let current = 0, timer;
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.addEventListener('click', () => { go(i); restart(); });
+      dotsWrap.appendChild(d);
+    });
+    const dots = [...dotsWrap.children];
+    function go(i) {
+      slides[current].classList.remove('active'); dots[current].classList.remove('active');
+      current = (i + slides.length) % slides.length;
+      slides[current].classList.add('active'); dots[current].classList.add('active');
+    }
+    function restart() { clearInterval(timer); timer = setInterval(() => go(current + 1), 6000); }
+    document.getElementById('next').addEventListener('click', () => { go(current + 1); restart(); });
+    document.getElementById('prev').addEventListener('click', () => { go(current - 1); restart(); });
+    dots[0].classList.add('active'); restart();
+  }
+
+  /* ----- Scroll reveal ----- */
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  }), {threshold: .12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ----- Animated counters ----- */
+  const cio = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.count, dur = 1600, start = performance.now();
+    const tick = now => {
+      const p = Math.min((now - start) / dur, 1);
+      el.textContent = Math.floor(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-IN');
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick); cio.unobserve(el);
+  }), {threshold: .5});
+  document.querySelectorAll('.counter').forEach(el => cio.observe(el));
+
+  /* ----- Forms (connect to your backend / mail handler here) ----- */
+  document.querySelectorAll('.js-form').forEach(form => form.addEventListener('submit', e => {
+    e.preventDefault();
+    // TODO: send form data to your server, e.g. fetch('send-mail.php', {method:'POST', body:new FormData(form)})
+    form.querySelector('.form-msg').classList.add('show');
+    form.reset();
+    setTimeout(() => form.querySelector('.form-msg').classList.remove('show'), 6000);
+  }));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
+</script>
+</body>
+</html>
