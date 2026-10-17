@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Login | Renard Services Pvt. Ltd.</title>
+<meta name="description" content="Log in to your Renard Services client account to track applications, documents and invoices.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#E8711A;--orange-dark:#C95D0E;--orange-soft:#FDF1E7;
+  --grey-900:#2B2725;--grey-800:#3B3532;--grey-700:#5A514C;--grey-500:#8A817C;--grey-200:#E7E3E0;--grey-100:#F6F4F2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;color:var(--grey-700);background:#fff;min-height:100vh;font-size:15px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit}
+.accent{font-family:'Playfair Display',serif;font-style:italic;font-weight:700}
+
+.auth{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
+
+/* ---------- Brand panel ---------- */
+.brand{position:relative;overflow:hidden;background:linear-gradient(150deg,#F5913F 0%,var(--orange) 40%,var(--orange-dark) 100%);color:#fff;padding:48px 56px;display:flex;flex-direction:column}
+.brand::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1.2px,transparent 1.2px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.brand .c1{position:absolute;right:-160px;top:-160px;width:460px;height:460px;border-radius:50%;border:70px solid rgba(255,255,255,.08)}
+.brand .c2{position:absolute;left:-120px;bottom:-140px;width:360px;height:360px;border-radius:50%;background:rgba(43,39,37,.10)}
+.brand .ring{position:absolute;right:60px;bottom:120px;width:180px;height:180px;border-radius:50%;border:3px dashed rgba(255,255,255,.3);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.brand>*{position:relative;z-index:1}
+.brand-logo{display:inline-flex;background:#fff;padding:10px 16px;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.12);align-self:flex-start}
+.brand-logo img{height:58px;width:auto;display:block}
+.brand-body{margin:auto 0;padding:40px 0}
+.brand h1{color:#fff;font-size:clamp(32px,3.4vw,46px);font-weight:800;line-height:1.15;letter-spacing:-1px;margin-bottom:16px}
+.brand h1 .accent{color:#fff}
+.brand p.lead{font-size:16.5px;color:rgba(255,255,255,.9);max-width:440px;margin-bottom:34px}
+.perks{display:grid;gap:14px;max-width:440px}
+.perk{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);border-radius:16px;padding:14px 16px}
+.perk i{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:#fff;display:grid;place-items:center}
+.perk i svg{width:21px;height:21px;stroke:var(--orange);fill:none;stroke-width:2}
+.perk b{display:block;font-size:15px;color:#fff;font-weight:600}
+.perk span{font-size:13px;color:rgba(255,255,255,.82)}
+.brand-foot{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.85)}
+.brand-foot svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
+
+/* ---------- Form panel ---------- */
+.panel{position:relative;display:flex;flex-direction:column;padding:32px 56px;background:linear-gradient(180deg,#fff 0%,#FFFAF6 100%)}
+.panel-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--grey-700);padding:9px 16px;border-radius:30px;border:1px solid var(--grey-200);background:#fff;transition:.25s}
+.back:hover{border-color:var(--orange);color:var(--orange)}
+.back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2}
+.panel-top .help{font-size:13.5px;color:var(--grey-500)}
+.panel-top .help a{color:var(--orange-dark);font-weight:600}
+.mobile-logo{display:none}
+
+.form-wrap{width:100%;max-width:430px;margin:auto;padding:40px 0}
+.form-wrap h2{font-size:32px;color:var(--grey-900);font-weight:800;letter-spacing:-.5px;margin-bottom:6px}
+.form-wrap .sub{color:var(--grey-500);margin-bottom:28px}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--grey-100);border-radius:14px;padding:5px;margin-bottom:26px;position:relative}
+.tabs button{position:relative;z-index:1;border:none;background:none;padding:11px;font-size:14.5px;font-weight:600;color:var(--grey-500);cursor:pointer;border-radius:10px;transition:color .25s}
+.tabs button.on{color:var(--grey-900)}
+.tabs .pill{position:absolute;top:5px;left:5px;width:calc(50% - 5px);height:calc(100% - 10px);background:#fff;border-radius:10px;box-shadow:0 4px 14px rgba(43,39,37,.08);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.tabs.otp .pill{transform:translateX(100%)}
+
+.view{display:none}
+.view.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--grey-800);margin-bottom:7px}
+.input{position:relative}
+.input svg.lead-ic{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:19px;height:19px;stroke:var(--grey-500);fill:none;stroke-width:2;pointer-events:none;transition:.2s}
+.input input{width:100%;height:52px;padding:0 48px 0 48px;border:1.5px solid var(--grey-200);border-radius:12px;background:#fff;font-size:15px;color:var(--grey-900);outline:none;transition:.2s}
+.input input::placeholder{color:#B5ADA8}
+.input input:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(232,113,26,.12)}
+.input input:focus~svg.lead-ic,.input:focus-within svg.lead-ic{stroke:var(--orange)}
+.input .pfx{position:absolute;left:46px;top:50%;transform:translateY(-50%);font-size:15px;color:var(--grey-700);font-weight:500;pointer-events:none}
+.input.has-pfx input{padding-left:86px}
+.eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:none;background:none;border-radius:10px;cursor:pointer;display:grid;place-items:center;color:var(--grey-500)}
+.eye:hover{background:var(--grey-100);color:var(--grey-900)}
+.eye svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2}
+.field.err input{border-color:#D9443A}
+.field .msg{display:none;font-size:12.5px;color:#D9443A;margin-top:6px}
+.field.err .msg{display:block}
+
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:-2px 0 24px;font-size:14px}
+.check{display:inline-flex;align-items:center;gap:9px;cursor:pointer;color:var(--grey-700);user-select:none}
+.check input{appearance:none;width:19px;height:19px;border:1.5px solid var(--grey-200);border-radius:6px;display:grid;place-items:center;cursor:pointer;transition:.2s;background:#fff}
+.check input:checked{background:var(--orange);border-color:var(--orange)}
+.check input:checked::after{content:"✓";color:#fff;font-size:12px;font-weight:700}
+.link{color:var(--orange-dark);font-weight:600;background:none;border:none;cursor:pointer;font-size:14px}
+.link:hover{text-decoration:underline;text-underline-offset:3px}
+
+.submit{width:100%;height:54px;border:none;border-radius:14px;background:linear-gradient(120deg,var(--orange),var(--orange-dark));color:#fff;font-size:16px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 28px rgba(232,113,26,.35);transition:.3s}
+.submit:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(232,113,26,.45)}
+.submit svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.5}
+.submit.loading{pointer-events:none;opacity:.85}
+.submit.loading span{display:none}
+.submit .spin{display:none;width:20px;height:20px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.submit.loading .spin{display:block}
+
+.otp-boxes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.otp-boxes input{width:100%;min-width:0;height:56px;text-align:center;font-size:22px;font-weight:700;color:var(--grey-900);border:1.5px solid var(--grey-200);border-radius:12px;outline:none;transition:.2s;background:#fff}
+.otp-boxes input:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(232,113,26,.12)}
+.otp-step2{display:none}
+.otp-step2.on{display:block;animation:fade .35s ease}
+.otp-note{font-size:13.5px;color:var(--grey-500);margin:10px 0 22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.otp-note b{color:var(--grey-900)}
+
+.alert{display:none;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:12px;font-size:14px;margin-bottom:20px}
+.alert.show{display:flex}
+.alert svg{flex-shrink:0;width:20px;height:20px;fill:none;stroke-width:2;margin-top:1px}
+.alert.info{background:var(--orange-soft);color:var(--grey-800)}
+.alert.info svg{stroke:var(--orange)}
+.alert.ok{background:#E8F6EC;color:#1E5E30}
+.alert.ok svg{stroke:#1E9E4A}
+
+.divider{display:flex;align-items:center;gap:14px;margin:28px 0 20px;color:var(--grey-500);font-size:13px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--grey-200)}
+.new-client{text-align:center;font-size:14.5px;color:var(--grey-700)}
+.new-client a{color:var(--orange-dark);font-weight:600}
+.secure{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:26px;font-size:12.5px;color:var(--grey-500)}
+.secure svg{width:15px;height:15px;stroke:#1E9E4A;fill:none;stroke-width:2.2}
+
+.strength{display:none;grid-template-columns:repeat(4,1fr) auto;gap:6px;align-items:center;margin-top:9px}
+.strength[data-s]{display:grid}
+.strength[data-s="0"]{display:none}
+.strength i{height:5px;border-radius:5px;background:var(--grey-200);transition:.3s}
+.strength span{font-size:12px;font-weight:600;color:var(--grey-500);min-width:58px;text-align:right}
+.strength[data-s="1"] i:nth-child(-n+1){background:#D9443A}
+.strength[data-s="2"] i:nth-child(-n+2){background:#F5A623}
+.strength[data-s="3"] i:nth-child(-n+3){background:#E8711A}
+.strength[data-s="4"] i{background:#1E9E4A}
+.check a{text-decoration:none}
+.field label.check{display:inline-flex;margin-bottom:0;font-weight:500}
+.panel-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--grey-500)}
+.panel-foot a:hover{color:var(--orange)}
+
+@media (max-width:980px){
+  .auth{grid-template-columns:1fr}
+  .brand{display:none}
+  .panel{padding:22px 20px;min-height:100vh}
+  .mobile-logo{display:block}
+  .mobile-logo img{height:50px}
+  .panel-top .help{display:none}
+}
+@media (max-width:420px){
+  .form-wrap h2{font-size:27px}
+  .otp-boxes{gap:7px}
+  .otp-boxes input{height:50px;font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<main class="auth">
+
+  <!-- ================= BRAND PANEL ================= -->
+  <aside class="brand" aria-hidden="false">
+    <span class="c1"></span><span class="c2"></span><span class="ring"></span>
+    <a href="index.html" class="brand-logo"><img src="images/logo.png" alt="Renard Services"></a>
+
+    <div class="brand-body">
+      <h1>Welcome to your<br><span class="accent">Client Portal</span></h1>
+      <p class="lead">Create your free account or log in to manage all your services with Renard Services in one place.</p>
+      <div class="perks">
+        <div class="perk"><i><svg viewBox="0 0 24 24"><path d="M3 17c3-1 4-6 6-6s1 5 3 5 3-3 4-3 1 2 2 2M3 21h18"/><path d="M15 3l4 4-8 8H7v-4z"/></svg></i><div><b>Track your applications</b><span>See the status of your DSC, trademark or ISO request</span></div></div>
+        <div class="perk"><i><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></i><div><b>Documents &amp; invoices</b><span>Keep your documents and invoices in one place</span></div></div>
+        <div class="perk"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9 2h6"/></svg></i><div><b>Renewal reminders</b><span>Never miss a DSC or trademark renewal date</span></div></div>
+      </div>
+    </div>
+
+    <div class="brand-foot"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Trusted by clients across India since 2014</div>
+  </aside>
+
+  <!-- ================= FORM PANEL ================= -->
+  <section class="panel">
+    <div class="panel-top">
+      <a href="index.html" class="back"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Back to website</a>
+      <a href="index.html" class="mobile-logo"><img src="images/logo.png" alt="Renard Services"></a>
+      <span class="help">Need help? <a href="tel:+919549540099">+91 95495 40099</a></span>
+    </div>
+
+    <div class="form-wrap">
+
+      <!-- ===== LOGIN / SIGN UP ===== -->
+      <div id="authView">
+        <h2 id="authTitle">Client Login</h2>
+        <p class="sub" id="authSub">Welcome back! Log in with your email and password.</p>
+
+        <div class="tabs" id="tabs" role="tablist">
+          <span class="pill"></span>
+          <button type="button" class="on" data-tab="login" role="tab" aria-selected="true">Login</button>
+          <button type="button" data-tab="signup" role="tab" aria-selected="false">Create Account</button>
+        </div>
+
+        <div class="alert" id="authAlert"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span></span></div>
+
+        <!-- Login -->
+        <form class="view on" id="loginForm" novalidate>
+          <div class="field">
+            <label for="lEmail">Email Address</label>
+            <div class="input">
+              <input id="lEmail" type="email" placeholder="you@gmail.com" autocomplete="email" required>
+              <svg class="lead-ic" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </div>
+            <div class="msg">Please enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label for="lPass">Password</label>
+            <div class="input">
+              <input id="lPass" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+              <svg class="lead-ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+              <button type="button" class="eye" data-eye="lPass" aria-label="Show password"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+            <div class="msg">Please enter your password.</div>
+          </div>
+          <div class="row">
+            <label class="check"><input type="checkbox" id="remember" checked> Remember me</label>
+            <button type="button" class="link" id="toForgot">Forgot password?</button>
+          </div>
+          <button type="submit" class="submit"><span>Log In</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><i class="spin"></i></button>
+          <div class="divider">New to Renard Services?</div>
+          <p class="new-client">Don't have an account? <button type="button" class="link" data-go="signup">Create one now</button></p>
+        </form>
+
+        <!-- Create account -->
+        <form class="view" id="signupForm" novalidate>
+          <div class="field">
+            <label for="sName">Full Name</label>
+            <div class="input">
+              <input id="sName" type="text" placeholder="Your full name" autocomplete="name" required>
+              <svg class="lead-ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>
+            </div>
+            <div class="msg">Please enter your name.</div>
+          </div>
+          <div class="field">
+            <label for="sPhone">Phone Number</label>
+            <div class="input has-pfx">
+              <input id="sPhone" type="tel" inputmode="numeric" maxlength="10" placeholder="98xxxxxxxx" autocomplete="tel-national" required>
+              <svg class="lead-ic" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+              <span class="pfx">+91</span>
+            </div>
+            <div class="msg">Please enter a valid 10-digit mobile number.</div>
+          </div>
+          <div class="field">
+            <label for="sEmail">Email Address</label>
+            <div class="input">
+              <input id="sEmail" type="email" placeholder="you@gmail.com" autocomplete="email" required>
+              <svg class="lead-ic" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </div>
+            <div class="msg">Please enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label for="sPass">Password</label>
+            <div class="input">
+              <input id="sPass" type="password" placeholder="At least 8 characters" autocomplete="new-password" required>
+              <svg class="lead-ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+              <button type="button" class="eye" data-eye="sPass" aria-label="Show password"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+            <div class="strength" id="strength"><i></i><i></i><i></i><i></i><span></span></div>
+            <div class="msg">Password must be at least 8 characters.</div>
+          </div>
+          <div class="field">
+            <label for="sPass2">Confirm Password</label>
+            <div class="input">
+              <input id="sPass2" type="password" placeholder="Re-enter your password" autocomplete="new-password" required>
+              <svg class="lead-ic" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div class="msg">Passwords do not match.</div>
+          </div>
+          <div class="field" style="margin-bottom:22px">
+            <label class="check"><input type="checkbox" id="agree"> <span style="font-size:13.5px">I agree to the <a href="privacy-policy.html" target="_blank" style="color:var(--orange-dark);font-weight:600">Privacy Policy</a></span></label>
+            <div class="msg">Please accept the Privacy Policy to continue.</div>
+          </div>
+          <button type="submit" class="submit"><span>Create Account</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><i class="spin"></i></button>
+          <div class="divider">Already a client?</div>
+          <p class="new-client">Have an account? <button type="button" class="link" data-go="login">Log in here</button></p>
+        </form>
+      </div>
+
+      <!-- ===== FORGOT PASSWORD ===== -->
+      <div id="forgotView" style="display:none">
+        <h2>Reset Password</h2>
+        <p class="sub">Enter your registered email and we'll send you a link to reset your password.</p>
+        <div class="alert" id="forgotAlert"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span></span></div>
+        <form id="forgotForm" novalidate>
+          <div class="field">
+            <label for="fEmail">Email Address</label>
+            <div class="input">
+              <input id="fEmail" type="email" placeholder="you@gmail.com" autocomplete="email">
+              <svg class="lead-ic" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </div>
+            <div class="msg">Please enter a valid email address.</div>
+          </div>
+          <button type="submit" class="submit"><span>Send Reset Link</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><i class="spin"></i></button>
+        </form>
+        <div class="divider">or</div>
+        <p class="new-client"><button type="button" class="link" id="toLogin">← Back to login</button></p>
+      </div>
+
+      <div class="secure"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your connection is secure and your data is protected</div>
+    </div>
+
+    <div class="panel-foot">
+      <span>© <span id="yr"></span> Renard Services Pvt. Ltd.</span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> · <a href="index.html#quote">Contact</a></span>
+    </div>
+  </section>
+</main>
+
+<script type="module">
+import { RenardAuth } from './auth.js';
+const $=s=>document.querySelector(s);
+$('#yr').textContent=new Date().getFullYear();
+
+const isEmail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+const setErr=(el,bad)=>{ el.closest('.field').classList.toggle('err',bad); return bad; };
+const loading=(btn,on)=>btn.classList.toggle('loading',on);
+const alertBox=$('#authAlert');
+const showAlert=(text,type='info')=>{ alertBox.className='alert '+type+' show'; alertBox.querySelector('span').textContent=text; };
+const hideAlert=()=>alertBox.classList.remove('show');
+let busy=false;
+
+/* already logged in? go straight to the dashboard */
+RenardAuth.currentUser().then(u=>{ if(u && !busy) location.replace('dashboard.html'); });
+
+/* tabs */
+const tabs=$('#tabs');
+function go(tab){
+  const signup=tab==='signup';
+  tabs.classList.toggle('otp',signup);
+  tabs.querySelectorAll('button').forEach(b=>{const on=b.dataset.tab===tab; b.classList.toggle('on',on); b.setAttribute('aria-selected',on);});
+  $('#loginForm').classList.toggle('on',!signup); $('#signupForm').classList.toggle('on',signup);
+  $('#authTitle').textContent=signup?'Create Your Account':'Client Login';
+  $('#authSub').textContent=signup?'Join in a minute. Track all your services in one place.':'Welcome back! Log in with your email and password.';
+  hideAlert();
+  history.replaceState(null,'',signup?'#signup':'#login');
+}
+tabs.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.tab)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+if (location.hash==='#signup') go('signup');
+addEventListener('hashchange',()=>go(location.hash==='#signup'?'signup':'login'));
+
+/* show / hide password */
+document.querySelectorAll('[data-eye]').forEach(btn=>btn.addEventListener('click',()=>{
+  const p=document.getElementById(btn.dataset.eye); const show=p.type==='password'; p.type=show?'text':'password';
+  btn.setAttribute('aria-label',show?'Hide password':'Show password');
+}));
+
+/* password strength */
+const sPass=$('#sPass'), meter=$('#strength');
+sPass.addEventListener('input',()=>{
+  const v=sPass.value; let s=0;
+  if(v.length>=8) s++; if(/[A-Z]/.test(v)&&/[a-z]/.test(v)) s++; if(/\d/.test(v)) s++; if(/[^A-Za-z0-9]/.test(v)) s++;
+  meter.dataset.s=v?s:0; meter.querySelector('span').textContent=v?['Too weak','Weak','Fair','Good','Strong'][s]:'';
+});
+$('#sPhone').addEventListener('input',e=>{ e.target.value=e.target.value.replace(/\D/g,'').slice(0,10); });
+
+/* login */
+$('#loginForm').addEventListener('submit',async e=>{
+  e.preventDefault(); hideAlert();
+  const em=$('#lEmail'), pw=$('#lPass');
+  const bad=[setErr(em,!isEmail(em.value)), setErr(pw,!pw.value)].some(Boolean); if(bad) return;
+  const btn=e.target.querySelector('.submit'); loading(btn,true); busy=true;
+  try{ await RenardAuth.login(em.value,pw.value,$('#remember').checked); location.href='dashboard.html'; }
+  catch(err){ busy=false; loading(btn,false); showAlert(err.message); }
+});
+
+/* create account */
+$('#signupForm').addEventListener('submit',async e=>{
+  e.preventDefault(); hideAlert();
+  const n=$('#sName'), ph=$('#sPhone'), em=$('#sEmail'), p1=$('#sPass'), p2=$('#sPass2'), ag=$('#agree');
+  const bad=[
+    setErr(n,n.value.trim().length<2),
+    setErr(ph,!/^[6-9]\d{9}$/.test(ph.value)),
+    setErr(em,!isEmail(em.value)),
+    setErr(p1,p1.value.length<8),
+    setErr(p2,!p2.value||p2.value!==p1.value),
+    setErr(ag,!ag.checked)
+  ].some(Boolean); if(bad) return;
+  const btn=e.target.querySelector('.submit'); loading(btn,true); busy=true;
+  try{ await RenardAuth.register({name:n.value,phone:'+91 '+ph.value,email:em.value,password:p1.value}); location.href='dashboard.html?welcome=1'; }
+  catch(err){ busy=false; loading(btn,false); showAlert(err.message); }
+});
+
+/* forgot password */
+$('#toForgot').addEventListener('click',()=>{ $('#authView').style.display='none'; $('#forgotView').style.display='block'; $('#fEmail').value=$('#lEmail').value; $('#forgotAlert').classList.remove('show'); });
+$('#toLogin').addEventListener('click',()=>{ $('#forgotView').style.display='none'; $('#authView').style.display='block'; });
+$('#forgotForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=$('#fEmail'); if(setErr(f,!isEmail(f.value))) return;
+  const btn=e.target.querySelector('.submit'); loading(btn,true);
+  const box=$('#forgotAlert');
+  try{ await RenardAuth.resetPassword(f.value); box.className='alert ok show'; box.querySelector('span').textContent='If an account exists for '+f.value.trim()+', a password reset link has been sent. Please check your inbox (and spam folder).'; }
+  catch(err){ box.className='alert info show'; box.querySelector('span').textContent=err.message; }
+  loading(btn,false);
+});
+
+document.querySelectorAll('.input input').forEach(i=>i.addEventListener('input',()=>i.closest('.field').classList.remove('err')));
+$('#agree').addEventListener('change',()=>$('#agree').closest('.field').classList.remove('err'));
+</script>
+
+</body>
+</html>

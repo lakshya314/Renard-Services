@@ -1,0 +1,92 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // Admin list - create these documents by hand in the console
+    match /admins/{adminId} {
+      allow read: if signedIn() && request.auth.uid == adminId;
+      allow write: if false;
+    }
+
+    // Clients
+    match /users/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create: if isOwner(uid);
+      allow update: if isAdmin()
+        || (isOwner(uid)
+            && request.resource.data.diff(resource.data).affectedKeys()
+                 .hasOnly(['name', 'phone', 'company', 'city', 'gstin']));
+      allow delete: if false;
+
+      // Service requests
+      match /requests/{reqId} {
+        allow read: if isOwner(uid) || isAdmin();
+        allow create: if isOwner(uid)
+          && request.resource.data.status == 'Submitted';
+        allow update: if isAdmin()
+          || (isOwner(uid)
+              && resource.data.status == 'Submitted'
+              && request.resource.data.status == 'Cancelled'
+              && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']));
+        allow delete: if isAdmin();
+      }
+
+      // Uploaded documents
+      match /documents/{docId} {
+        allow read, create, delete: if isOwner(uid) || isAdmin();
+        allow update: if isAdmin();
+      }
+
+      // Invoices - clients read, admins write
+      match /invoices/{invId} {
+        allow read: if isOwner(uid) || isAdmin();
+        allow write: if isAdmin();
+      }
+    }
+
+    // Admin dashboard: read requests, documents and invoices of all clients
+    match /{path=**}/requests/{reqId} {
+      allow read: if isAdmin();
+    }
+    match /{path=**}/documents/{docId} {
+      allow read: if isAdmin();
+    }
+    match /{path=**}/invoices/{invId} {
+      allow read: if isAdmin();
+    }
+
+    // Website quote form
+    match /enquiries/{id} {
+      allow create: if request.resource.data.status == 'New'
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 100
+        && request.resource.data.message is string
+        && request.resource.data.message.size() <= 2000;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Website careers form
+    match /applications/{id} {
+      allow create: if request.resource.data.status == 'New'
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 100
+        && request.resource.data.message is string
+        && request.resource.data.message.size() <= 2000;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

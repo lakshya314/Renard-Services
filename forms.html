@@ -1,0 +1,64 @@
+<!-- ================= WEBSITE FORMS → FIREBASE =================
+     Paste this whole block just before </body> in index.html.
+     It saves "Connect With Us" to the "enquiries" collection and
+     "Join Our Team" to the "applications" collection, which show up
+     in admin.html. It replaces any older form code automatically. -->
+<script type="module">
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCmlTtRupzQVC9q8MxJ0WbV1qCxHFp6UFo",
+  authDomain: "website-data-fd8bd.firebaseapp.com",
+  projectId: "website-data-fd8bd",
+  storageBucket: "website-data-fd8bd.firebasestorage.app",
+  messagingSenderId: "612173633311",
+  appId: "1:612173633311:web:6a1d381c4697a19e31c22a"
+};
+const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const clip = (v, n) => String(v || '').trim().slice(0, n);
+
+/* Catch the submit before any older form code runs */
+document.addEventListener('submit', async e => {
+  const form = e.target.closest('.js-form');
+  if (!form) return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+
+  const isCareers = form.id === 'careers';
+  const f = Object.fromEntries(new FormData(form));
+  const btn = form.querySelector('button[type=submit]');
+  const msg = form.querySelector('.form-msg');
+  const label = btn.innerHTML;
+  if (!msg.dataset.ok) msg.dataset.ok = msg.textContent;
+  btn.disabled = true; btn.textContent = 'Sending…';
+
+  try {
+    if (isCareers) {
+      await addDoc(collection(db, 'applications'), {
+        name: clip(f.name, 100), phone: clip(f.phone, 20), email: clip(f.email, 120),
+        city: clip(f.city, 60), message: clip(f.message, 2000),
+        status: 'New', date: serverTimestamp()
+      });
+    } else {
+      await addDoc(collection(db, 'enquiries'), {
+        name: clip(f.name, 100), phone: clip(f.phone, 20), email: clip(f.email, 120),
+        service: clip(f.service, 60), message: clip(f.message, 2000),
+        status: 'New', page: location.pathname, date: serverTimestamp()
+      });
+    }
+    msg.textContent = msg.dataset.ok;
+    msg.classList.remove('err');
+    form.reset();
+  } catch (err) {
+    console.error('[Renard form] Could not save:', err.code || '', err.message);
+    msg.textContent = "Sorry, we couldn't send your message. Please call +91 95495 40099 or try again.";
+    msg.classList.add('err');
+  }
+  msg.classList.add('show');
+  btn.disabled = false; btn.innerHTML = label;
+  setTimeout(() => msg.classList.remove('show'), 7000);
+}, true);
+</script>
+<style>.form-msg.err{background:#FDECEA!important;color:#9B2C24!important}</style>

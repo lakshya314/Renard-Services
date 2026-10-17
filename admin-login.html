@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | Renard Services</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#E8711A;--orange-dark:#C95D0E;--orange-soft:#FDF1E7;--grey-900:#2B2725;--grey-800:#3B3532;--grey-700:#5A514C;--grey-500:#8A817C;--grey-200:#E7E3E0;--grey-100:#F6F4F2}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px;background:var(--grey-900);color:var(--grey-700);position:relative;overflow:hidden}
+body::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px}
+body::after{content:"";position:absolute;width:640px;height:640px;right:-220px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(232,113,26,.35),transparent 65%)}
+.glow{position:absolute;width:480px;height:480px;left:-200px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(232,113,26,.22),transparent 65%)}
+.card{position:relative;z-index:1;width:100%;max-width:440px;background:#fff;border-radius:26px;padding:40px 38px 32px;box-shadow:0 40px 90px rgba(0,0,0,.4)}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.top img{height:54px}
+.tag{display:inline-flex;align-items:center;gap:7px;background:var(--grey-900);color:#fff;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:7px 13px;border-radius:30px}
+.tag svg{width:14px;height:14px;stroke:var(--orange);fill:none;stroke-width:2.2}
+h1{font-size:28px;color:var(--grey-900);font-weight:800;letter-spacing:-.5px;margin-bottom:6px}
+.sub{color:var(--grey-500);font-size:14.5px;margin-bottom:26px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--grey-800);margin-bottom:7px}
+.input{position:relative}
+.input svg.ic{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:19px;height:19px;stroke:var(--grey-500);fill:none;stroke-width:2;pointer-events:none}
+.input input{width:100%;height:52px;padding:0 48px;border:1.5px solid var(--grey-200);border-radius:12px;font-family:inherit;font-size:15px;color:var(--grey-900);outline:none;transition:.2s}
+.input input:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(232,113,26,.12)}
+.input:focus-within svg.ic{stroke:var(--orange)}
+.eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:none;background:none;border-radius:10px;cursor:pointer;display:grid;place-items:center;color:var(--grey-500)}
+.eye:hover{background:var(--grey-100)}
+.eye svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2}
+.field.err input{border-color:#D9443A}
+.msg{display:none;font-size:12.5px;color:#D9443A;margin-top:6px}
+.field.err .msg{display:block}
+.alert{display:none;gap:10px;align-items:flex-start;background:#FDECEA;color:#9B2C24;border-radius:12px;padding:13px 15px;font-size:14px;margin-bottom:18px}
+.alert.show{display:flex}
+.alert svg{flex-shrink:0;width:19px;height:19px;stroke:#D9443A;fill:none;stroke-width:2;margin-top:1px}
+.submit{width:100%;height:54px;border:none;border-radius:14px;background:linear-gradient(120deg,var(--orange),var(--orange-dark));color:#fff;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 28px rgba(232,113,26,.35);transition:.3s;margin-top:6px}
+.submit:hover{transform:translateY(-2px)}
+.submit svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.5}
+.submit .spin{display:none;width:20px;height:20px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.submit.loading{pointer-events:none;opacity:.85}
+.submit.loading span,.submit.loading svg{display:none}
+.submit.loading .spin{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:24px;padding-top:20px;border-top:1px dashed var(--grey-200);font-size:13px}
+.foot a{color:var(--grey-500)}
+.foot a:hover{color:var(--orange)}
+.lock{display:flex;align-items:center;gap:7px;color:var(--grey-500);font-size:12.5px}
+.lock svg{width:14px;height:14px;stroke:#1E9E4A;fill:none;stroke-width:2.2}
+@media (max-width:480px){.card{padding:30px 22px 24px;border-radius:22px}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<span class="glow"></span>
+<main class="card">
+  <div class="top">
+    <img src="images/logo.png" alt="Renard Services">
+    <span class="tag"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg>Admin</span>
+  </div>
+  <h1>Admin Panel</h1>
+  <p class="sub">Sign in to manage clients, requests and enquiries.</p>
+
+  <div class="alert" id="alert"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span></span></div>
+
+  <form id="form" novalidate>
+    <div class="field">
+      <label for="email">Admin Email</label>
+      <div class="input">
+        <input id="email" type="email" autocomplete="username" placeholder="admin@renardservices.com">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+      </div>
+      <div class="msg">Please enter a valid email address.</div>
+    </div>
+    <div class="field">
+      <label for="pass">Password</label>
+      <div class="input">
+        <input id="pass" type="password" autocomplete="current-password" placeholder="Enter your password">
+        <svg class="ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <button type="button" class="eye" id="eye" aria-label="Show password"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+      </div>
+      <div class="msg">Please enter your password.</div>
+    </div>
+    <button class="submit" type="submit"><span>Sign In</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><i class="spin"></i></button>
+  </form>
+
+  <div class="foot">
+    <a href="index.html">← Back to website</a>
+    <span class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Authorised staff only</span>
+  </div>
+</main>
+
+<script type="module">
+import { RenardAuth, isAdmin } from './auth.js';
+const $=s=>document.querySelector(s);
+const alertBox=$('#alert');
+const showErr=t=>{ alertBox.querySelector('span').textContent=t; alertBox.classList.add('show'); };
+let busy=false;
+
+/* already signed in as admin → go to dashboard */
+RenardAuth.currentUser().then(async u=>{ if(u && !busy && await isAdmin(u.uid)) location.replace('admin.html'); });
+
+$('#eye').addEventListener('click',()=>{ const p=$('#pass'); p.type=p.type==='password'?'text':'password'; });
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',()=>i.closest('.field').classList.remove('err')));
+
+$('#form').addEventListener('submit',async e=>{
+  e.preventDefault(); alertBox.classList.remove('show');
+  const em=$('#email'), pw=$('#pass');
+  const badE=!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim()), badP=!pw.value;
+  em.closest('.field').classList.toggle('err',badE); pw.closest('.field').classList.toggle('err',badP);
+  if(badE||badP) return;
+  const btn=e.target.querySelector('.submit'); btn.classList.add('loading'); busy=true;
+  try{
+    const u=await RenardAuth.login(em.value,pw.value,false);
+    if(!(await isAdmin(u.uid))){ await RenardAuth.logout(); throw new Error('This account does not have admin access.'); }
+    location.href='admin.html';
+  }catch(err){ busy=false; btn.classList.remove('loading'); showErr(err.message); }
+});
+</script>
+</body>
+</html>
